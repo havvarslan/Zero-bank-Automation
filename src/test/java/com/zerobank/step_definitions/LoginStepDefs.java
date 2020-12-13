@@ -22,8 +22,7 @@ public class LoginStepDefs {
 
     @When("the user logs in using {string} and {string} in following credentials")
     public void the_user_logs_in_using_and_in_following_credentials(String userType, String password) {
-        LoginPage loginPage=new LoginPage();
-        loginPage.login(userType,password);
+        new LoginPage().login(userType,password);
     }
     @Then("{string} is displayed")
     public void is_displayed(String message) {

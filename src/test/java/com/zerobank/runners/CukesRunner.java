@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
                     "html:target/default-html-reports"},
             features ="src/test/resources/features/",
             glue = "com/zerobank/step_definitions",
-            dryRun = true ,
-            tags = "@EU2-178"
+            dryRun = false ,
+            tags = "@currency"
     )
 
     public class CukesRunner{

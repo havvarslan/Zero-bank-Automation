@@ -21,7 +21,7 @@ Feature: Pay Bills
    Given the user logs in
    When user should be on the "<pageType>" page
    And the user submits a payment operation without entering the "<amount>" or "<date>"
-   Then the messageshould be displayed "<expected_message>"
+   Then the message should be displayed "<expected_message>"
     Examples:
 #      | pageType  | amount | date       | expected_message              |
 #      | Pay Bills | 300900 |            | "Please fill out this field." |

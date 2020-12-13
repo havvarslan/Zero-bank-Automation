@@ -1,3 +1,4 @@
+@accountSum
 Feature:Account summary page
 
   Scenario: Account summary page title

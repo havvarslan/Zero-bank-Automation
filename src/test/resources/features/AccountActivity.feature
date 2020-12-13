@@ -1,3 +1,4 @@
+@accountAct
 Feature: Account Activity page
 
   Scenario: Account drop down

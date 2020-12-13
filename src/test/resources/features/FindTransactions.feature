@@ -1,40 +1,38 @@
+@findTransaction
   Feature: Find Transactions in Account Activity
+
     Background:
-            Given the user access the Find Transactions tab
-@smoke
+      Given the user logs in
+      When the page have the title Account Activity
+      And the user access the Find Transactions tab
+
       Scenario: Search date range
-       Given the user access the Find Transactions tab
        When the user enters date range from "2012-09-01" to "2012-09-06"
-        And clicks search
-     #   Then results table should only show transactions dates between "2012-09-01" and "2012-09-06"
-  #     And the results should be sorted by most recent date
-
-
-      Scenario: Change the date range
-         Given the user access the Find Transactions tab
-         When the user enters date range from "2012-09-02" to "2012-09-06"
-         And clicks search
-      #   Then results table should only show transactions dates between "2012-09-02" and "2012-09-06"
-    #    And the results table should only not contain transactions dated "2012-09-01"
+       And clicks search
+       Then results table should only show transactions dates between "2012-09-01" and "2012-09-06"
+       And the results should be sorted by most recent date
+       When the user enters date range from "2012-09-02" to "2012-09-06"
+       And clicks search
+       Then results table should only show transactions dates between "2012-09-02" and "2012-09-06"
+       And the results table should only not contain transactions dated "2012-09-01"
 
     Scenario: Search description
       When the user enters description "ONLINE"
-      And click search
+      And clicks search
       Then results table should only show descriptions containing "ONLINE"
-
-     Scenario: Search description with no result
       When the user enters description "OFFICE"
       And clicks search
       Then results table should only show descriptions containing "OFFICE"
       But results table should not show descriptions containing "OFFICE"
 
+
     Scenario: Search description case insensitive
       When the user enters description "ONLINE"
       And clicks search
-      Then result table shoud only show descriptions containing "ONLINE"
+      Then results table should only show descriptions containing "ONLINE"
       When the user enters description "online"
       And clicks search
-      Then results table should only show descriptions contaiing "ONLINE"
+      Then results table should only show descriptions containing "ONLINE"
 
     Scenario: Type
       And clicks search
